@@ -7,7 +7,7 @@ file_to_load=os.path.join("Resources","election_results.csv")
     #write data to the file(file to save)
         # Assign a variable to save the file to a path.
 file_to_save=os.path.join("analysis","election_analysis.txt")
-    #initialize variable total votes start at 0
+    #initialize variable total votes start at 0(ACCUMULATOR initializer)
 total_votes=0
     #declare an empty canidate list, add canidate_name to the list in for loop using append() method.
 canidate_options=[]
@@ -59,12 +59,13 @@ with open(file_to_load) as election_data:
             winning_percentage=percentage_votes
             #set the winning canidate= canidates name
             winning_canidate=canidate_name
-            winning_canidate_summary=(
+    winning_canidate_summary=(
                 f"--------------------------\n"
                 f'Winner:{winning_canidate}\n'
                 f'Winner Vote Count:{winning_count:,}\n'
+                f'Winning Percentage:{winning_percentage:1f}%\n'
                 f'---------------------------')
-        print(winning_canidate_summary)
+    print(winning_canidate_summary)
 
     
 
